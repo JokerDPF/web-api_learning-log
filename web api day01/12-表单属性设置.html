@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" value="请输入">
+    <button disabled>按钮</button>
+    <input type="checkbox" name="" id="" class="agree">
+    <script>
+        // 1.获取元素
+        let input = document.querySelector('input')
+        // 2.取值或者设置值
+        // console.log(input.value)
+        input.value = '小米手机'
+        input.type = 'password'
+        // 2.启用按钮
+        let button = document.querySelector('button')
+        // disabled 不可用  =  false     可用
+        // button.disabled = false
+        // 3.勾选复选框 
+        let checkbox = document.querySelector('.agree')
+        checkbox.checked = true
+    </script>
+</body>
+</html>

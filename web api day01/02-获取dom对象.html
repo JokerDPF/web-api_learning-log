@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div>我是一个盒子1</div>
+    <div>我是一个盒子2</div> -->
+    <div class="three">我是一个盒子3</div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+        // js 只能得到第一个元素
+        // css选择器来获取dom元素   语法
+        // document.querySelector('css选择器')
+        
+        let li = document.querySelector('ul li:last-child')
+        let div = document.querySelector('.three')
+        console.log(div)
+        console.log(li)
+
+
+        // js 获取所有的选择器
+        // 得到是一个数组 是伪数组 // 无论有几个标签
+        let lis = document.querySelectorAll('ul li')
+        console.log(lis)
+        // 想要得到里面的每一个对象 需要使用for循环
+        for (let i = 0; i < lis.length; i++) {
+            console.log(lis[i])
+        }
+    </script>
+</body>
+</html>

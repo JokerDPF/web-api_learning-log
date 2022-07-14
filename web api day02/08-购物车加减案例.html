@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 80px;
+    }
+
+    input[type=text] {
+      width: 50px;
+      height: 44px;
+      outline: none;
+      border: 1px solid #ccc;
+      text-align: center;
+      border-right: 0;
+    }
+
+    input[type=button] {
+      height: 24px;
+      width: 22px;
+      cursor: pointer;
+    }
+
+    input {
+      float: left;
+      border: 1px solid #ccc;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <input type="text" id="total" value="1" readonly>
+    <input type="button" value="+" id="add">
+    <input type="button" value="-" id="reduce" disabled>
+    <script>
+    </script>
+  </div>
+</body>
+<script>
+    // 1.获取元素   购物车加减按钮  文本框
+    let add = document.querySelector('#add')
+    let reduce = document.querySelector('#reduce')
+    let total = document.querySelector('#total')
+    // 2.添加事件
+    // 当点击加号按钮时 文本框内的数字++ 同时解除减号按钮的禁用
+    add.addEventListener('click', function() {
+        // total.value = total.value + 1
+        total.value++
+        reduce.disabled = false
+    })
+    // 3.点击减号按钮时 事件监听 文本框内的数字-- 同时数字不能小于1 添加一个if判断语句 当数字小于等于1时 禁用减号按钮 
+    reduce.addEventListener('click', function() {
+        // total.value = total.value - 1
+        total.value--
+        if(total.value <= 1){
+            reduce.disabled = true
+        }
+    }) 
+</script>
+</html>

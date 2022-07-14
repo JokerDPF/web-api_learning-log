@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="./images/1.webp" alt="">
+    <script>
+        // 1.生成一个随机数
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min
+        }
+        // 在1-6数字里面随机生成一个数字
+        let num = getRandom(1, 6)
+        // 获取变量
+        let pic = document.querySelector('img')
+        // 修改图片属性 src
+        pic.src = `./images/${num}.webp`
+    </script>
+</body>
+</html>

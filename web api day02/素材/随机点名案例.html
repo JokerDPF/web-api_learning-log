@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .box {
+            width: 600px;
+            margin: 50px auto;
+            display: flex;
+            font-size: 25px;
+            line-height: 40px;
+        }
+
+        .qs {
+
+            width: 450px;
+            height: 40px;
+            color: red;
+
+        }
+
+        .btns {
+            text-align: center;
+        }
+
+        .btns button {
+            width: 120px;
+            height: 35px;
+            margin: 0 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>随机点名</h2>
+    <div class="box">
+        <span>名字是：</span>
+        <div class="qs">这里显示姓名</div>
+    </div>
+    <div class="btns">
+        <button class="start">开始</button>
+        <button class="end">结束</button>
+    </div>
+
+    <script>
+        // 数据数组
+        let arr = ['马超', '黄忠', '赵云', '关羽', '张飞']
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min
+        }
+        // 1.获取开始按钮 获取盒子
+        let btn = document.querySelector('button')
+        let box = document.querySelector('.box .qs')
+        
+        // 2.事件监听
+        btn.addEventListener('click', function() {
+            // 3.获取一个随机数
+            let num = getRandom(0, arr.length - 1)
+            box.innerHTML = arr[num]
+            // 删除数组里面的元素  splic(从哪里删，删几个)
+            arr.splice(num, 1)
+            // 判断数组是否抽完 如果数组里面剩下最后一个禁用按钮
+            if (arr.length === 0) {
+                btn.disabled = ture
+            }
+
+        })
+    </script>
+</body>
+
+</html>

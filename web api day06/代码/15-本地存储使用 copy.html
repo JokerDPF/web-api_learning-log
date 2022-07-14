@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 设置一个对象
+        let obj = {
+            uname : '邓鹏飞',
+            age : 19,
+            address : '黑马'
+        }
+        // 存储复杂数据对象
+        localStorage.setItem('obj', JSON.stringify(obj))
+        // 取出复杂数据对象
+        console.log(JSON.parse(localStorage.getItem('obj')))
+    </script>
+</body>
+
+</html>

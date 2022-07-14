@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        粉红色的回忆
+    </div>
+
+    <script>
+        // 1.获取标签
+        let box = document.querySelector('div')
+        // 2.修改标签内容
+        // 对象.属性 = 值
+        // box.innerText = '有点意思~'
+        // 不支持标签
+        // box.innerText = '<h2>有点意思~</h2>'
+        // 支持解析标签
+        box.innerHTML = '<h2>有点意思~</h2>'
+
+    </script>
+</body>
+</html>

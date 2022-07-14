@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 400px;
+            height: 50px;
+            background-color: pink;
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+<script>
+    let arr = ['星期天','星期一','星期二','星期三','星期四','星期五','星期六']
+    // 先调用一次函数，取消点开页面的1秒空白
+    getTime()
+    setInterval(getTime, 1000)
+    
+    function getTime(){
+        // 1.实例化
+        let date = new Date()
+        // 2.获取时间
+        let year = date.getFullYear()
+        let month = date.getMonth() + 1
+        let date1 = date.getDate()
+        let hour = date.getHours()
+        let minutes = date.getMinutes()
+        let sec = date.getSeconds()
+        let day = date.getDay()
+        // 3.把时间添加到div标签内
+        let div = document.querySelector('div')
+        div.innerHTML = `今天是：${year}年${month}月${date1}日 ${hour}:${minutes}:${sec} ${arr[day]}`
+    }
+    
+
+</script>
+</body>
+
+</html>

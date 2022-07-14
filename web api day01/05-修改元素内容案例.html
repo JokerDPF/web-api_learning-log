@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            display: inline-block;
+            width: 150px;
+            height: 30px;
+            border: 1px solid pink;
+            vertical-align: middle;
+            text-align: center;
+            line-height: 30px
+            
+        }
+    </style>
+</head>
+<body>
+    抽中的选手：<div></div>
+    <script>
+        // 1.获取元素
+        let box = document.querySelector('div')
+        // 2.得到随机名字
+        // 随机数
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min
+        }
+        // 声明一个数组
+        let arr = ['赵云', '黄忠', '关羽', '张飞', '马超', '刘备', '韩信']
+        
+        // 生成一个随机数
+        let random = getRandom(0, arr.length - 1)
+        // 3. 写入标签内部
+        box.innerHTML = arr[random]
+
+        // 打印完毕之后，删除名字
+        // arr.splice(从哪里开始删，删几个)
+        arr.splice(random, 1)
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url(./images/desktop_1.jpg);
+        }
+    </style>
+</head>
+<body>
+    <script>
+        //  1.随机函数
+         function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min
+        }
+        // 在1-10之间生成一个随机数
+        let num = getRandom(1, 10)
+        // 获取变量
+        let body = document.querySelector('body')
+        // 修改style属性
+        body.style.backgroundImage = `url(./images/desktop_${num}.jpg)`
+    </script>
+</body>
+</html>
